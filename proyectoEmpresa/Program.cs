@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoEmpresa.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace proyectoEmpresa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormChangeProducts());
+            Application.Run(new FormShop());
         }
     }
 }

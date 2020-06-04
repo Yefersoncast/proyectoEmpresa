@@ -44,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbFindId = new System.Windows.Forms.TextBox();
             this.btSendId = new System.Windows.Forms.Button();
-            this.btActivateCat = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btShowProducts = new System.Windows.Forms.Button();
             this.btSearchProduct = new System.Windows.Forms.Button();
@@ -55,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 44);
+            this.label1.Location = new System.Drawing.Point(85, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -64,14 +63,14 @@
             // cbSelectCategory
             // 
             this.cbSelectCategory.FormattingEnabled = true;
-            this.cbSelectCategory.Location = new System.Drawing.Point(90, 146);
+            this.cbSelectCategory.Location = new System.Drawing.Point(50, 146);
             this.cbSelectCategory.Name = "cbSelectCategory";
             this.cbSelectCategory.Size = new System.Drawing.Size(114, 21);
             this.cbSelectCategory.TabIndex = 1;
             // 
             // tbSearchProduct
             // 
-            this.tbSearchProduct.Location = new System.Drawing.Point(88, 78);
+            this.tbSearchProduct.Location = new System.Drawing.Point(64, 78);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(100, 20);
             this.tbSearchProduct.TabIndex = 2;
@@ -90,7 +89,7 @@
             this.gbChanges.Controls.Add(this.tbChangeNam);
             this.gbChanges.Location = new System.Drawing.Point(12, 260);
             this.gbChanges.Name = "gbChanges";
-            this.gbChanges.Size = new System.Drawing.Size(277, 188);
+            this.gbChanges.Size = new System.Drawing.Size(192, 188);
             this.gbChanges.TabIndex = 4;
             this.gbChanges.TabStop = false;
             this.gbChanges.Text = "Cambios";
@@ -98,7 +97,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(188, 156);
+            this.btSave.Location = new System.Drawing.Point(91, 141);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 10;
@@ -117,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 118);
+            this.label5.Location = new System.Drawing.Point(6, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 8;
@@ -126,7 +125,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 91);
+            this.label6.Location = new System.Drawing.Point(4, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 9;
@@ -136,7 +135,7 @@
             // 
             this.tbChangeCate.Location = new System.Drawing.Point(76, 115);
             this.tbChangeCate.Name = "tbChangeCate";
-            this.tbChangeCate.Size = new System.Drawing.Size(187, 20);
+            this.tbChangeCate.Size = new System.Drawing.Size(100, 20);
             this.tbChangeCate.TabIndex = 3;
             // 
             // tbChangeDes
@@ -172,7 +171,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 236);
+            this.label2.Location = new System.Drawing.Point(32, 218);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 5;
@@ -180,41 +179,32 @@
             // 
             // tbFindId
             // 
-            this.tbFindId.Location = new System.Drawing.Point(68, 233);
+            this.tbFindId.Location = new System.Drawing.Point(12, 234);
             this.tbFindId.Name = "tbFindId";
             this.tbFindId.Size = new System.Drawing.Size(100, 20);
             this.tbFindId.TabIndex = 6;
             // 
             // btSendId
             // 
-            this.btSendId.Location = new System.Drawing.Point(174, 231);
+            this.btSendId.Location = new System.Drawing.Point(118, 234);
             this.btSendId.Name = "btSendId";
             this.btSendId.Size = new System.Drawing.Size(75, 23);
             this.btSendId.TabIndex = 7;
             this.btSendId.Text = "Enviar";
             this.btSendId.UseVisualStyleBackColor = true;
-            // 
-            // btActivateCat
-            // 
-            this.btActivateCat.Location = new System.Drawing.Point(9, 144);
-            this.btActivateCat.Name = "btActivateCat";
-            this.btActivateCat.Size = new System.Drawing.Size(75, 23);
-            this.btActivateCat.TabIndex = 8;
-            this.btActivateCat.Text = "Ver";
-            this.btActivateCat.UseVisualStyleBackColor = true;
-            this.btActivateCat.Click += new System.EventHandler(this.button1_Click);
+            this.btSendId.Click += new System.EventHandler(this.btSendId_Click);
             // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(281, 44);
+            this.dgvProducts.Location = new System.Drawing.Point(210, 44);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(507, 368);
+            this.dgvProducts.Size = new System.Drawing.Size(578, 368);
             this.dgvProducts.TabIndex = 9;
             // 
             // btShowProducts
             // 
-            this.btShowProducts.Location = new System.Drawing.Point(88, 174);
+            this.btShowProducts.Location = new System.Drawing.Point(48, 174);
             this.btShowProducts.Name = "btShowProducts";
             this.btShowProducts.Size = new System.Drawing.Size(116, 23);
             this.btShowProducts.TabIndex = 10;
@@ -224,7 +214,7 @@
             // 
             // btSearchProduct
             // 
-            this.btSearchProduct.Location = new System.Drawing.Point(101, 104);
+            this.btSearchProduct.Location = new System.Drawing.Point(73, 104);
             this.btSearchProduct.Name = "btSearchProduct";
             this.btSearchProduct.Size = new System.Drawing.Size(75, 23);
             this.btSearchProduct.TabIndex = 11;
@@ -240,7 +230,6 @@
             this.Controls.Add(this.btSearchProduct);
             this.Controls.Add(this.btShowProducts);
             this.Controls.Add(this.dgvProducts);
-            this.Controls.Add(this.btActivateCat);
             this.Controls.Add(this.btSendId);
             this.Controls.Add(this.tbFindId);
             this.Controls.Add(this.label2);
@@ -250,6 +239,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormChangeProducts";
             this.Text = "FormChangeProducts";
+            this.Load += new System.EventHandler(this.FormChangeProducts_Load);
             this.gbChanges.ResumeLayout(false);
             this.gbChanges.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
@@ -276,7 +266,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbFindId;
         private System.Windows.Forms.Button btSendId;
-        private System.Windows.Forms.Button btActivateCat;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btShowProducts;
         private System.Windows.Forms.Button btSearchProduct;

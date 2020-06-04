@@ -26,31 +26,7 @@ namespace proyectoEmpresa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                cbSelectCategory.Text = "Categorias";
-                string consulta = "SELECT Categoria FROM productos";
-
-                MySqlConnection conection = new MySqlConnection("server=127.0.0.1; user=root; password=; database=datos_proyecto");
-
-                //command.CommandTimeout = 60;
-                cbSelectCategory.Items.Clear();
-
-                conection.Open();
-                MySqlCommand command = new MySqlCommand(consulta, conection);
-                MySqlDataReader dr = command.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    cbSelectCategory.Refresh();
-                    cbSelectCategory.Items.Add(dr.GetValue(0).ToString());
-                }
-                conection.Close();
-            }
-            catch(MySqlException r)
-            {
-                MessageBox.Show(r.Message);
-            }
+            
         }
 
         private void btShowProducts_Click(object sender, EventArgs e)
@@ -101,6 +77,40 @@ namespace proyectoEmpresa
                     MessageBox.Show(r.Message);
                 }
             }
+        }
+
+        private void FormChangeProducts_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cbSelectCategory.Text = "Categorias";
+                string consulta = "SELECT Categoria FROM productos";
+
+                MySqlConnection conection = new MySqlConnection("server=127.0.0.1; user=root; password=; database=datos_proyecto");
+
+                //command.CommandTimeout = 60;
+                cbSelectCategory.Items.Clear();
+
+                conection.Open();
+                MySqlCommand command = new MySqlCommand(consulta, conection);
+                MySqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cbSelectCategory.Refresh();
+                    cbSelectCategory.Items.Add(dr.GetValue(0).ToString());
+                }
+                conection.Close();
+            }
+            catch (MySqlException r)
+            {
+                MessageBox.Show(r.Message);
+            }
+        }
+
+        private void btSendId_Click(object sender, EventArgs e)
+        {
+            gbChanges.Visible = true;
         }
     }
 }
