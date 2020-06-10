@@ -34,6 +34,12 @@
             this.tbSearchProduct = new System.Windows.Forms.TextBox();
             this.cbSelectCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbPruebaPrecio = new System.Windows.Forms.Label();
+            this.lbpruebaCantidad = new System.Windows.Forms.Label();
+            this.lbpruebaEstado = new System.Windows.Forms.Label();
+            this.lbpruebaTotal = new System.Windows.Forms.Label();
+            this.btAddToCar = new System.Windows.Forms.Button();
+            this.lbFilas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +82,7 @@
             // cbSelectCategory
             // 
             this.cbSelectCategory.FormattingEnabled = true;
-            this.cbSelectCategory.Location = new System.Drawing.Point(66, 205);
+            this.cbSelectCategory.Location = new System.Drawing.Point(66, 206);
             this.cbSelectCategory.Name = "cbSelectCategory";
             this.cbSelectCategory.Size = new System.Drawing.Size(114, 21);
             this.cbSelectCategory.TabIndex = 13;
@@ -90,11 +96,72 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Categorias";
             // 
+            // lbPruebaPrecio
+            // 
+            this.lbPruebaPrecio.AutoSize = true;
+            this.lbPruebaPrecio.Location = new System.Drawing.Point(211, 380);
+            this.lbPruebaPrecio.Name = "lbPruebaPrecio";
+            this.lbPruebaPrecio.Size = new System.Drawing.Size(34, 13);
+            this.lbPruebaPrecio.TabIndex = 22;
+            this.lbPruebaPrecio.Text = "Pecio";
+            // 
+            // lbpruebaCantidad
+            // 
+            this.lbpruebaCantidad.AutoSize = true;
+            this.lbpruebaCantidad.Location = new System.Drawing.Point(319, 380);
+            this.lbpruebaCantidad.Name = "lbpruebaCantidad";
+            this.lbpruebaCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lbpruebaCantidad.TabIndex = 23;
+            this.lbpruebaCantidad.Text = "Cantidad";
+            // 
+            // lbpruebaEstado
+            // 
+            this.lbpruebaEstado.AutoSize = true;
+            this.lbpruebaEstado.Location = new System.Drawing.Point(429, 380);
+            this.lbpruebaEstado.Name = "lbpruebaEstado";
+            this.lbpruebaEstado.Size = new System.Drawing.Size(40, 13);
+            this.lbpruebaEstado.TabIndex = 24;
+            this.lbpruebaEstado.Text = "Estado";
+            // 
+            // lbpruebaTotal
+            // 
+            this.lbpruebaTotal.AutoSize = true;
+            this.lbpruebaTotal.Location = new System.Drawing.Point(647, 380);
+            this.lbpruebaTotal.Name = "lbpruebaTotal";
+            this.lbpruebaTotal.Size = new System.Drawing.Size(31, 13);
+            this.lbpruebaTotal.TabIndex = 26;
+            this.lbpruebaTotal.Text = "Total";
+            // 
+            // btAddToCar
+            // 
+            this.btAddToCar.Location = new System.Drawing.Point(625, 334);
+            this.btAddToCar.Name = "btAddToCar";
+            this.btAddToCar.Size = new System.Drawing.Size(75, 23);
+            this.btAddToCar.TabIndex = 27;
+            this.btAddToCar.Text = "Agregar";
+            this.btAddToCar.UseVisualStyleBackColor = true;
+            this.btAddToCar.Click += new System.EventHandler(this.btAddTocar_Click);
+            // 
+            // lbFilas
+            // 
+            this.lbFilas.AutoSize = true;
+            this.lbFilas.Location = new System.Drawing.Point(43, 380);
+            this.lbFilas.Name = "lbFilas";
+            this.lbFilas.Size = new System.Drawing.Size(28, 13);
+            this.lbFilas.TabIndex = 28;
+            this.lbFilas.Text = "Filas";
+            // 
             // FormShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbFilas);
+            this.Controls.Add(this.btAddToCar);
+            this.Controls.Add(this.lbpruebaTotal);
+            this.Controls.Add(this.lbpruebaEstado);
+            this.Controls.Add(this.lbpruebaCantidad);
+            this.Controls.Add(this.lbPruebaPrecio);
             this.Controls.Add(this.btSearchProduct);
             this.Controls.Add(this.btShowProducts);
             this.Controls.Add(this.tbSearchProduct);
@@ -118,5 +185,11 @@
         private System.Windows.Forms.TextBox tbSearchProduct;
         private System.Windows.Forms.ComboBox cbSelectCategory;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbPruebaPrecio;
+        private System.Windows.Forms.Label lbpruebaCantidad;
+        private System.Windows.Forms.Label lbpruebaEstado;
+        private System.Windows.Forms.Label lbpruebaTotal;
+        private System.Windows.Forms.Button btAddToCar;
+        private System.Windows.Forms.Label lbFilas;
     }
 }
