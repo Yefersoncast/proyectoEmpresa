@@ -85,8 +85,7 @@ namespace proyectoEmpresa
         {
             try
             {
-                cbSelectCategory.Text = "Categorias";
-                string consulta = "SELECT Categoria FROM productos";
+                string consulta = "SELECT distinct Categoria FROM productos";
 
                 MySqlConnection conection = new MySqlConnection("server=127.0.0.1; user=root; password=; database=datos_proyecto");
 
@@ -133,7 +132,12 @@ namespace proyectoEmpresa
             ProductsController pController = new ProductsController();
             query = pController.modifyProduct(id, name, price, category, description);
 
-
+            MessageBox.Show(query);
+            gbChanges.Visible = false;
+            tbChangeNam.Text = null;
+            tbChangeCat.Text = null;
+            tbChangeDesc.Text = null;
+            tbChangePrice.Text = null;
 
 
         }

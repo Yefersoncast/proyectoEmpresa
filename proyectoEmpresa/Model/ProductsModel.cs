@@ -30,6 +30,7 @@ namespace proyectoEmpresa.Model
                 {
                     return "true";
                 }
+
                 //Cierro la conexion con la base de datos
                 connection.Close();
             }

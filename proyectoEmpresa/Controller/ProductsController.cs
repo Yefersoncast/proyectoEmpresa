@@ -19,7 +19,7 @@ namespace proyectoEmpresa.Controller
     public string modifyProduct(int id, string name, double price, string category, string description)
     {
         string resultado = "";
-        string query = "update productos set nombre= '" + name + "', precio= '" + price + "', categoria='" + category + "', descripcion='" + description + "' where ID = " + id + " ";
+        string query = "update productos set nombre= '" + name + "', precio= '" + price + "', categoria='" + category + "', descripcion='" + description + "' where idProducto= " + id + " ";
 
             string respuesta = dataBase.saveData(query);
 
