@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbChangeCate = new System.Windows.Forms.TextBox();
-            this.tbChangeDes = new System.Windows.Forms.TextBox();
+            this.tbChangeDesc = new System.Windows.Forms.TextBox();
+            this.tbChangeCat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbChangePrice = new System.Windows.Forms.TextBox();
             this.tbChangeNam = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             // 
             // cbSelectCategory
             // 
+            this.cbSelectCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelectCategory.FormattingEnabled = true;
             this.cbSelectCategory.Location = new System.Drawing.Point(50, 146);
             this.cbSelectCategory.Name = "cbSelectCategory";
@@ -82,8 +83,8 @@
             this.gbChanges.Controls.Add(this.label3);
             this.gbChanges.Controls.Add(this.label5);
             this.gbChanges.Controls.Add(this.label6);
-            this.gbChanges.Controls.Add(this.tbChangeCate);
-            this.gbChanges.Controls.Add(this.tbChangeDes);
+            this.gbChanges.Controls.Add(this.tbChangeDesc);
+            this.gbChanges.Controls.Add(this.tbChangeCat);
             this.gbChanges.Controls.Add(this.label4);
             this.gbChanges.Controls.Add(this.tbChangePrice);
             this.gbChanges.Controls.Add(this.tbChangeNam);
@@ -103,6 +104,7 @@
             this.btSave.TabIndex = 10;
             this.btSave.Text = "Guardar";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // label3
             // 
@@ -131,19 +133,19 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Descripcion:";
             // 
-            // tbChangeCate
+            // tbChangeDesc
             // 
-            this.tbChangeCate.Location = new System.Drawing.Point(76, 115);
-            this.tbChangeCate.Name = "tbChangeCate";
-            this.tbChangeCate.Size = new System.Drawing.Size(100, 20);
-            this.tbChangeCate.TabIndex = 3;
+            this.tbChangeDesc.Location = new System.Drawing.Point(76, 115);
+            this.tbChangeDesc.Name = "tbChangeDesc";
+            this.tbChangeDesc.Size = new System.Drawing.Size(100, 20);
+            this.tbChangeDesc.TabIndex = 3;
             // 
-            // tbChangeDes
+            // tbChangeCat
             // 
-            this.tbChangeDes.Location = new System.Drawing.Point(76, 88);
-            this.tbChangeDes.Name = "tbChangeDes";
-            this.tbChangeDes.Size = new System.Drawing.Size(100, 20);
-            this.tbChangeDes.TabIndex = 2;
+            this.tbChangeCat.Location = new System.Drawing.Point(76, 88);
+            this.tbChangeCat.Name = "tbChangeCat";
+            this.tbChangeCat.Size = new System.Drawing.Size(100, 20);
+            this.tbChangeCat.TabIndex = 2;
             // 
             // label4
             // 
@@ -258,8 +260,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbChangeCate;
-        private System.Windows.Forms.TextBox tbChangeDes;
+        private System.Windows.Forms.TextBox tbChangeDesc;
+        private System.Windows.Forms.TextBox tbChangeCat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbChangePrice;
         private System.Windows.Forms.TextBox tbChangeNam;

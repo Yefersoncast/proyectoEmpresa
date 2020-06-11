@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using proyectoEmpresa.Controller;
+
 namespace proyectoEmpresa
 {
     public partial class FormChangeProducts : Form
@@ -111,6 +113,29 @@ namespace proyectoEmpresa
         private void btSendId_Click(object sender, EventArgs e)
         {
             gbChanges.Visible = true;
+        }
+
+        /*
+         * @JuanJo Éste metodo permite que al hacer click todos los datos recolectados por las cajas de texto
+         * sean enviados a la base de datos reemplazando la informacion en el id de producto correspondiente
+        */
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            string name, category, description, query;
+            double price;
+            int id = Convert.ToInt32(tbFindId.Text);
+
+            name = tbChangeNam.Text;
+            price = Convert.ToDouble(tbChangePrice.Text);
+            category = tbChangeCat.Text;
+            description = tbChangeDesc.Text;
+
+            ProductsController pController = new ProductsController();
+            query = pController.modifyProduct(id, name, price, category, description);
+
+
+
+
         }
     }
 }

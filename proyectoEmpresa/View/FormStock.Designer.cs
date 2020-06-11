@@ -71,6 +71,7 @@
             this.cbSelectCategory.Name = "cbSelectCategory";
             this.cbSelectCategory.Size = new System.Drawing.Size(114, 21);
             this.cbSelectCategory.TabIndex = 12;
+            this.cbSelectCategory.SelectedIndexChanged += new System.EventHandler(this.cbSelectCategory_SelectedIndexChanged);
             // 
             // dgvProducts
             // 

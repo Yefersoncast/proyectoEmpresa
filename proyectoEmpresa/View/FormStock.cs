@@ -44,7 +44,7 @@ namespace proyectoEmpresa.View
         private void btShowProducts_Click(object sender, EventArgs e)
         {
             string category = cbSelectCategory.Text;
-            string query = "SELECT * FROM productos WHERE Categoria = '"+category+"'";
+            string query = "SELECT Nombre, Precio, Descripcion FROM productos WHERE Categoria = '" + category + "'";
 
             MySqlConnection conexion = new MySqlConnection("server=127.0.0.1; user=root; password=; database = datos_proyecto");
             MySqlCommand comando = new MySqlCommand(query, conexion);
@@ -98,6 +98,11 @@ namespace proyectoEmpresa.View
             {
                 MessageBox.Show(r.Message);
             }
+        }
+
+        private void cbSelectCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
