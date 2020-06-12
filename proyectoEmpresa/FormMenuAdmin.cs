@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoEmpresa.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace proyectoEmpresa
         public FormMenuAdmin()
         {
             InitializeComponent();
+        }
+
+        private void btChangeProducts_Click(object sender, EventArgs e)
+        {
+            FormChangeProducts formChangeProducts = new FormChangeProducts();
+            formChangeProducts.Show();
+        }
+
+        private void btAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btStock_Click(object sender, EventArgs e)
+        {
+            FormStock formStock = new FormStock();
+            formStock.Show();
         }
     }
 }

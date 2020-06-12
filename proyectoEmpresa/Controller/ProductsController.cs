@@ -19,7 +19,7 @@ namespace proyectoEmpresa.Controller
     public string modifyProduct(int id, string name, double price, string category, string description)
     {
         string resultado = "";
-        string query = "update productos set nombre= '" + name + "', precio= '" + price + "', categoria='" + category + "', descripcion='" + description + "' where idProducto= " + id + " ";
+        string query = "update productos set nombre= '" + name + "', precio= '" + price + "', categoria='" + category + "', descripcion='" + description + "' where idProducto= '" + id + "' ";
 
             string respuesta = dataBase.saveData(query);
 
@@ -37,5 +37,29 @@ namespace proyectoEmpresa.Controller
         }
         return resultado;
     }
-  }
+
+        public string refreshStockProduct(int id, int stock)
+        {
+            string resultado = "";
+            string query = "update productos set Cantidad= '" + stock + "' where idProducto= '" + id + "' ";
+
+            string respuesta = dataBase.saveStockChanges(query);
+
+            if (respuesta == "true")
+            {
+                resultado = "El producto ha sido modificado";
+            }
+            else if (respuesta == "false")
+            {
+                resultado = "El producto no ha sido modificado";
+            }
+            else
+            {
+                resultado = respuesta;
+            }
+            return resultado;
+        }
+
+
+    }
 }

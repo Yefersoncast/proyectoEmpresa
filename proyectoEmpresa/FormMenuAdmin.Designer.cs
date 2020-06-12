@@ -41,6 +41,7 @@
             this.btChangeProducts.TabIndex = 0;
             this.btChangeProducts.Text = "Modificar";
             this.btChangeProducts.UseVisualStyleBackColor = true;
+            this.btChangeProducts.Click += new System.EventHandler(this.btChangeProducts_Click);
             // 
             // btAddProduct
             // 
@@ -50,6 +51,7 @@
             this.btAddProduct.TabIndex = 1;
             this.btAddProduct.Text = "Agregar producto";
             this.btAddProduct.UseVisualStyleBackColor = true;
+            this.btAddProduct.Click += new System.EventHandler(this.btAddProduct_Click);
             // 
             // btStock
             // 
@@ -59,6 +61,7 @@
             this.btStock.TabIndex = 2;
             this.btStock.Text = "Inventario";
             this.btStock.UseVisualStyleBackColor = true;
+            this.btStock.Click += new System.EventHandler(this.btStock_Click);
             // 
             // FormMenuAdmin
             // 

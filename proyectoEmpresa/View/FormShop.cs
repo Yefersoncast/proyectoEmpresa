@@ -10,17 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
+using proyectoEmpresa.Controller;
 
 namespace proyectoEmpresa.View
 {
     public partial class FormShop : Form
     {
-        int chk, am, prc;
+        int chk, am, prc, name;
         public FormShop()
         {
             InitializeComponent();
         }
-
+        /*
+         * @JuanJo Metodo que busca el producto por su nombre y lo imprime en el dgv
+         */
         private void btSearchProduct_Click(object sender, EventArgs e)
         {
             string name = tbSearchProduct.Text;
@@ -44,7 +47,9 @@ namespace proyectoEmpresa.View
                 MessageBox.Show(r.Message);
             }
         }
-
+        /*
+         * @JuanJo Llena el comboBox con las categorias existentes
+         */
         private void FormShop_Load(object sender, EventArgs e)
         {
             try
@@ -70,7 +75,9 @@ namespace proyectoEmpresa.View
                 MessageBox.Show(r.Message);
             }
         }
-
+        /*
+         * @JuanJo Muestra ciertos atributos de los productos buscados por su categoria
+         */
         private void btShowProducts_Click(object sender, EventArgs e)
         {
 
@@ -89,6 +96,7 @@ namespace proyectoEmpresa.View
                 dgvProducts.DataSource = data;         //Define de donde sacará la info
                 dgvProducts.DataMember = "productos"; //Define la tabla que aparecerá
 
+                //Agrega 2 nuevas columnas a la tabla pero no permite que se sigan agregando mediante la decision
                 if (dgvProducts.Columns.Count < 5)
                 {
                     DataGridViewTextBoxColumn tbc = new DataGridViewTextBoxColumn();
@@ -101,8 +109,6 @@ namespace proyectoEmpresa.View
                     dgvProducts.AllowUserToAddRows = false;
                 }
                 
-               // lbColumnas.Text = "" + dgvProducts.Columns.Count;
-
             }
             catch (MySqlException r)
             {
@@ -110,11 +116,18 @@ namespace proyectoEmpresa.View
             }
         }
 
+        /*
+         * @JuanJo Este es el método con el que el cliente confirma la compra y se encarga de leer las casillas
+         * guardando primero el indice de su columna y luego accediendo a el valor de cada celda en esa columna
+         * para leerlo y hacer las tareas necesarias con dicho dato
+         */
+
         private void btAddToCar_Click(object sender, EventArgs e)
         {
             bool check;
-            double amount, price, tot=0;
-            int i;
+            double price, tot=0;
+            string nameProd;
+            int i, amount, actualStock, newStock;
 
             foreach (DataGridViewColumn column in dgvProducts.Columns)
             {
@@ -130,6 +143,10 @@ namespace proyectoEmpresa.View
                 {
                     prc = column.Index;
                 }
+                if (column.HeaderText.Equals("Nombre"))
+                {
+                    name = column.Index;
+                }
             }
 
                     for (i = 0; i < dgvProducts.Rows.Count; i++)
@@ -137,15 +154,52 @@ namespace proyectoEmpresa.View
                         check = Convert.ToBoolean(dgvProducts.Rows[i].Cells[chk].Value);
                         if (check == true)
                         {
-                            amount = Convert.ToDouble(dgvProducts.Rows[i].Cells[am].Value);
-                            price = Convert.ToDouble(dgvProducts.Rows[i].Cells[prc].Value);
-
-                            tot += amount * price;
+                            amount = Convert.ToInt32(dgvProducts.Rows[i].Cells[am].Value);
+                            nameProd = Convert.ToString(dgvProducts.Rows[i].Cells[name].Value);
+                            actualStock = confirmStock(nameProd);
+                            newStock = actualStock - amount;
+                          if ( newStock >= 0)
+                           {
+                             price = Convert.ToDouble(dgvProducts.Rows[i].Cells[prc].Value);
+                             tot += amount * price;
+                           }
+                          else
+                           {
+                        MessageBox.Show("Lo sentimos la cantidad de " + nameProd + " requerida es superior" +
+                            " a nuestras existencias, por favor escoja una cantidad inferior o igual a " + actualStock+" unidades");
+                           }
+                            
                         }
                     }
             lbpruebaTotal.Text = "" + tot;
         }
 
+        /*
+         * @JuanJo Pequeño método que confirmará la cantidad de existencias de producto disponibles para que 
+         * el usuario realice la compra 
+         */
+
+        private int confirmStock(string nameProd)
+        {
+            string query = "select Cantidad from productos where Nombre = '" + nameProd + "'"; string what;
+            int response=0;
+
+            MySqlConnection connection = new MySqlConnection("server=127.0.0.1; user=root; password=; database = datos_proyecto");
+            MySqlCommand comand = new MySqlCommand(query, connection);
+            comand.CommandTimeout = 60;
+            try
+            {
+                connection.Open();
+                MySqlDataReader rd = comand.ExecuteReader();
+                what = rd.GetString(query);
+            }
+            catch(MySqlException r)
+            {
+                MessageBox.Show(r.Message);
+            }
+
+            return response;
+        }
         private void cbSelectCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Contar cantidad de filas y columnas(desde 1) comenzando desde cero

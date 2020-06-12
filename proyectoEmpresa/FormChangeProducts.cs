@@ -129,6 +129,7 @@ namespace proyectoEmpresa
             category = tbChangeCat.Text;
             description = tbChangeDesc.Text;
 
+            //Mando la informacion al controlador para que le haga la peticion al modelo
             ProductsController pController = new ProductsController();
             query = pController.modifyProduct(id, name, price, category, description);
 
@@ -140,6 +141,12 @@ namespace proyectoEmpresa
             tbChangePrice.Text = null;
 
 
+        }
+
+        private void btReturn_Click(object sender, EventArgs e)
+        {
+            FormMenuAdmin formMenuAdmin = new FormMenuAdmin();
+            formMenuAdmin.Show();
         }
     }
 }
