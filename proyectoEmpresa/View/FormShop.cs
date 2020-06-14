@@ -86,7 +86,6 @@ namespace proyectoEmpresa.View
         private void createIdDetails()
         {
             string available = "false";
-            string pruebaId;
             Random rand = new Random();
             available = searchId(idBill);
             //Ciclo que hace la magia de generar ids aleatorios hasta que el espacio esté disponible (true)
@@ -96,8 +95,6 @@ namespace proyectoEmpresa.View
               available = searchId(idBill);
              } while(available == "false");
           
-            pruebaId = idBill;
-            lbPrueba.Text = available;
         }
 
         /*
@@ -315,22 +312,6 @@ namespace proyectoEmpresa.View
         {
             ProductsController pController = new ProductsController();
             pController.refreshStockProductByname(nameProduct,newStock);
-        }
-
-        private void cbSelectCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Contar cantidad de filas y columnas(desde 1) comenzando desde cero
-            // lbPruebaPrecio.Text = ""+dgvProducts.Rows.GetLastRow(DataGridViewElementStates.Displayed);
-            //lbpruebaCantidad.Text = ""+dgvProducts.Columns.Count;
-            //Obtiene el contenido de la celda pero comienza las columnas desde cero
-            //lbpruebaEstado.Text = "" + dgvProducts.Rows[0].Cells[2].Value;
-            //lbContenidoCheckBox.Text = "" + Convert.ToBoolean(dgvProducts.Rows[2].Cells[4].Value);
-            //lbPruebaContenido.Text = "" + dgvProducts.Rows[2].Cells[3].Value;
-            //Casillas de prueba
-            //lbpruebaEstado.Text = ""+ Convert.ToString(dgvProducts.Rows[0].Cells[4].Value);
-            /*lbPruebaPrecio.Text = "" + dgvProducts.Rows[1].Cells[1].Value;
-            lbpruebaCantidad.Text = "" + dgvProducts.Rows[1].Cells[3].Value;
-            */
         }
 
     }

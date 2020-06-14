@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbSelectCategory = new System.Windows.Forms.ComboBox();
             this.tbSearchProduct = new System.Windows.Forms.TextBox();
@@ -48,8 +49,11 @@
             this.btShowProducts = new System.Windows.Forms.Button();
             this.btSearchProduct = new System.Windows.Forms.Button();
             this.btReturn = new System.Windows.Forms.Button();
+            this.btCancelMod = new System.Windows.Forms.Button();
+            this.eProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbChanges.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +84,7 @@
             // 
             // gbChanges
             // 
+            this.gbChanges.Controls.Add(this.btCancelMod);
             this.gbChanges.Controls.Add(this.btSave);
             this.gbChanges.Controls.Add(this.label3);
             this.gbChanges.Controls.Add(this.label5);
@@ -99,7 +104,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(91, 141);
+            this.btSave.Location = new System.Drawing.Point(101, 141);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 10;
@@ -202,6 +207,7 @@
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(199, 23);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
             this.dgvProducts.Size = new System.Drawing.Size(578, 368);
             this.dgvProducts.TabIndex = 9;
             // 
@@ -235,6 +241,20 @@
             this.btReturn.UseVisualStyleBackColor = true;
             this.btReturn.Click += new System.EventHandler(this.btReturn_Click);
             // 
+            // btCancelMod
+            // 
+            this.btCancelMod.Location = new System.Drawing.Point(6, 142);
+            this.btCancelMod.Name = "btCancelMod";
+            this.btCancelMod.Size = new System.Drawing.Size(70, 22);
+            this.btCancelMod.TabIndex = 11;
+            this.btCancelMod.Text = "Cancelar";
+            this.btCancelMod.UseVisualStyleBackColor = true;
+            this.btCancelMod.Click += new System.EventHandler(this.btCancelMod_Click);
+            // 
+            // eProvider
+            // 
+            this.eProvider.ContainerControl = this;
+            // 
             // FormChangeProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +277,7 @@
             this.gbChanges.ResumeLayout(false);
             this.gbChanges.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +305,7 @@
         private System.Windows.Forms.Button btShowProducts;
         private System.Windows.Forms.Button btSearchProduct;
         private System.Windows.Forms.Button btReturn;
+        private System.Windows.Forms.Button btCancelMod;
+        private System.Windows.Forms.ErrorProvider eProvider;
     }
 }
