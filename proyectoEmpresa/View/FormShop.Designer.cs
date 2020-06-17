@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbpruebaTotal = new System.Windows.Forms.Label();
             this.btAddToCar = new System.Windows.Forms.Button();
+            this.btFact = new System.Windows.Forms.Button();
+            this.lbTotFact = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +98,7 @@
             // lbpruebaTotal
             // 
             this.lbpruebaTotal.AutoSize = true;
-            this.lbpruebaTotal.Location = new System.Drawing.Point(647, 380);
+            this.lbpruebaTotal.Location = new System.Drawing.Point(708, 370);
             this.lbpruebaTotal.Name = "lbpruebaTotal";
             this.lbpruebaTotal.Size = new System.Drawing.Size(31, 13);
             this.lbpruebaTotal.TabIndex = 26;
@@ -104,7 +106,7 @@
             // 
             // btAddToCar
             // 
-            this.btAddToCar.Location = new System.Drawing.Point(625, 334);
+            this.btAddToCar.Location = new System.Drawing.Point(683, 333);
             this.btAddToCar.Name = "btAddToCar";
             this.btAddToCar.Size = new System.Drawing.Size(75, 23);
             this.btAddToCar.TabIndex = 27;
@@ -112,11 +114,32 @@
             this.btAddToCar.UseVisualStyleBackColor = true;
             this.btAddToCar.Click += new System.EventHandler(this.btAddToCar_Click);
             // 
+            // btFact
+            // 
+            this.btFact.Location = new System.Drawing.Point(214, 333);
+            this.btFact.Name = "btFact";
+            this.btFact.Size = new System.Drawing.Size(75, 23);
+            this.btFact.TabIndex = 28;
+            this.btFact.Text = "Facturar";
+            this.btFact.UseVisualStyleBackColor = true;
+            this.btFact.Click += new System.EventHandler(this.btFact_Click);
+            // 
+            // lbTotFact
+            // 
+            this.lbTotFact.AutoSize = true;
+            this.lbTotFact.Location = new System.Drawing.Point(214, 370);
+            this.lbTotFact.Name = "lbTotFact";
+            this.lbTotFact.Size = new System.Drawing.Size(70, 13);
+            this.lbTotFact.TabIndex = 29;
+            this.lbTotFact.Text = "Total Factura";
+            // 
             // FormShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbTotFact);
+            this.Controls.Add(this.btFact);
             this.Controls.Add(this.btAddToCar);
             this.Controls.Add(this.lbpruebaTotal);
             this.Controls.Add(this.btSearchProduct);
@@ -144,5 +167,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbpruebaTotal;
         private System.Windows.Forms.Button btAddToCar;
+        private System.Windows.Forms.Button btFact;
+        public System.Windows.Forms.Label lbTotFact;
     }
 }

@@ -71,33 +71,5 @@ namespace proyectoEmpresa.Model
             return "false";
         }
 
-        public string fillDetails(string query)
-        {
-            MySqlConnection connection = new MySqlConnection(dirConnection);
-            MySqlCommand comand = new MySqlCommand(query, connection);
-            comand.CommandTimeout = 60;
-
-            try
-            {
-                connection.Open();
-
-                int numbResp = comand.ExecuteNonQuery();
-
-                if (numbResp > -1)
-                {
-                    return "true";
-                }
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-
-            return "false";
-
-        }
-
-
     }
 }

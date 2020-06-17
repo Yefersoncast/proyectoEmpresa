@@ -10,13 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Crypto.Agreement.JPake;
 using proyectoEmpresa.Controller;
+
 
 namespace proyectoEmpresa.View
 {
     public partial class FormShop : Form
     {
-        int chk, am, prc, name; string idBill;
+        int chk, am, prc, name; string idBill; double totAll = 0;
         public FormShop()
         {
             InitializeComponent();
@@ -87,7 +89,6 @@ namespace proyectoEmpresa.View
         {
             string available = "false";
             Random rand = new Random();
-            available = searchId(idBill);
             //Ciclo que hace la magia de generar ids aleatorios hasta que el espacio esté disponible (true)
             do
              {
@@ -265,7 +266,21 @@ namespace proyectoEmpresa.View
                             
                         }
                     }
+            totAll += tot;
             lbpruebaTotal.Text = "" + tot;
+            lbTotFact.Text = "" + totAll;
+
+            
+
+
+        }
+
+        private void btFact_Click(object sender, EventArgs e)
+        {
+            FormBill formBill = new FormBill();
+            formBill.lbTotAll.Text = lbTotFact.Text;
+            formBill.lbIdBill.Text = idBill;
+            formBill.Show();
         }
 
         /*
@@ -273,8 +288,8 @@ namespace proyectoEmpresa.View
          */
         private void sendInfoToDetails(string idBill, int idProduct, int amount, double totRow )
         {
-            ProductsController pController = new ProductsController();
-            pController.sendDetails(idBill, idProduct, amount, totRow);
+            BillController bController = new BillController(); 
+            bController.sendDetails(idBill, idProduct, amount, totRow);
         }
 
         /*
