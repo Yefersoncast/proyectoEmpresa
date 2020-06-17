@@ -93,7 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\BillDetailsController.cs" />
     <Compile Include="Controller\BillController.cs" />
     <Compile Include="Controller\ProductsController.cs" />
     <Compile Include="Controller\UsersController.cs" />
@@ -109,12 +108,17 @@
     <Compile Include="FormMenuAdmin.Designer.cs">
       <DependentUpon>FormMenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BillDatailsModel.cs" />
     <Compile Include="Model\BillModel.cs" />
     <Compile Include="Model\ProductsModel.cs" />
     <Compile Include="Model\UsersModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FormBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormBill.Designer.cs">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +158,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormBill.resx">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -122,7 +122,7 @@ namespace proyectoEmpresa.View
                 {
                     col = column.Index;
                 }
-                if (column.HeaderText.Equals("idProducto"))
+                if (column.HeaderText.Equals("IdProducto"))
                 {
                     id = column.Index;
                 }
@@ -137,7 +137,7 @@ namespace proyectoEmpresa.View
                       oStock = Convert.ToInt32(dgvProducts.Rows[i].Cells[oldSt].Value);
                       nStock = Convert.ToInt32(dgvProducts.Rows[i].Cells[col].Value) + oStock;
                       idProd = Convert.ToInt32(dgvProducts.Rows[i].Cells[id].Value);
-                      sendNewStock(idProd, nStock);
+                      sendNewStock(nStock , idProd);
                     }
         }
         /*
@@ -145,11 +145,12 @@ namespace proyectoEmpresa.View
          * inventario para mandarle los parámetros al metodo en el controlador que se encarga de hacer 
          * la peticion
          */
-        private void sendNewStock (int idProd, int nStock)
+        private void sendNewStock (int nStock, int idProd)
         {
             string query;
             ProductsController pController = new ProductsController();
-            query = pController.refreshStockProduct(idProd, nStock);
+            query = pController.refreshStockProduct(nStock,idProd);
+            
 
         }
 

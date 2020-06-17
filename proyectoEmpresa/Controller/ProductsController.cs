@@ -38,7 +38,7 @@ namespace proyectoEmpresa.Controller
         return resultado;
     }
 
-        public string refreshStockProduct(int id, int stock)
+        public string refreshStockProduct(int stock, int id)
         {
             string resultado = "";
             string query = "update productos set Cantidad= '" + stock + "' where idProducto= '" + id + "' ";
@@ -47,11 +47,11 @@ namespace proyectoEmpresa.Controller
 
             if (respuesta == "true")
             {
-                resultado = "El producto ha sido modificado";
+                resultado = "El producto ha sido actualizado";
             }
             else if (respuesta == "false")
             {
-                resultado = "El producto no ha sido modificado";
+                resultado = "El producto no ha sido actualizado";
             }
             else
             {
@@ -72,11 +72,11 @@ namespace proyectoEmpresa.Controller
 
             if (respuesta == "true")
             {
-                resultado = "El producto ha sido modificado";
+                resultado = "El producto ha sido actualizado";
             }
             else if (respuesta == "false")
             {
-                resultado = "El producto no ha sido modificado";
+                resultado = "El producto no ha sido actualizado";
             }
             else
             {
@@ -84,18 +84,5 @@ namespace proyectoEmpresa.Controller
             }
             return resultado;
         }
-
-        /*
-         * @JuanJo Éste metodo mandará la peticion con los datos para crear una nueva linea 
-         * en la tabla de detalles de factura (compra)
-         */
-
-        public string sendDetails (string idBill, int idProd, int unt, double tot)
-        {
-            string query = "INSERT INTO `compras`(`IdFactura`, `IdProducto`, `Unidades`, `ValorVenta`) VALUES ('" + idBill + "'," + idProd + "," + unt + "," + tot + ")";
-            string resp = dataBase.fillDetails(query);
-            return resp;
-        }
-
     }
 }
